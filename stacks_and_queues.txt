@@ -1,0 +1,93 @@
+Exercises:
+
+For exercises requiring code, you are free to use the language of your choice.
+
+Provide all the code and written answers in a file named stacks_and_queues.txt:
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+What is the main difference between a stack and a queue?
+
+Answer:
+
+The main difference between a stack and a queue is that a stack arranges data in a LIFO priority, while a queue arranges data in a FIFO priority.
+This essentially means that in a stack, the last element in the data structure is the first element to be removed.
+In a queue, the first element in the data structure is the first to be removed.
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+What are the similarities between stacks and queues?
+
+Answer:
+
+There are a number of similarities between stacks and queues.  On a basic level, they are both data structures.
+They both allow a certain order of operations to take place regarding data.  Both stacks and queues allow software engineers to rank tasks
+in a certain way.  Both data structures also enable the storing of data and supporting system functionality.
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word.
+Which data structure would you use for each option and why?
+
+Answer:
+
+For implementing either an UNDO or REDO option in a word processor, I would use a stack data structure.
+Regarding implementing UNDO, the most recently added item in the word processor would be removed and added to a REDO stack data structure.
+Regarding REDO, the most recently added item to the REDO stack can be removed and added to the UNDO stack data structure.
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Programming Questions
+You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
+
+Answer:
+
+function reverseString(string) {
+  let arrayStack = [];
+  for (let i = 0; i < string.length; i++) {
+    arrayStack.push(string[i]);
+  }
+  let backwardString = '';
+  for(let i = arrayStack.length -1; i>=0; i--) {
+    backwardString += arrayStack[i];
+  }
+  return backwardString;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+2. Implement the pop method of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure.
+Since the internal list is not the same as defined in the checkpoint, it may help to rewrite the pseudocode first.
+
+Answer:
+
+function popMethod(queueInput) {
+  let dataStructure = [];
+  for (let i=0; i < queueInput.length -1; i++) {
+    dataStructure.push(queueInput[i]);
+  }
+  let poppedItem = queueInput[queueInput.length-1]
+  return poppedItem;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+1. Implement the enqueue and dequeue methods defined in the checkpoint inside your own Queue class.
+
+Answer:
+
+CLASS QUEUE
+  FUNCTION enqueue(element)
+    APPEND element to the end of the list
+  END FUNCTION
+
+  FUNCTION dequeue
+    SET temp to the first element
+    REMOVE FIRST element of list from list
+    RETURN temp
+  END FUNCTION
+END CLASS
